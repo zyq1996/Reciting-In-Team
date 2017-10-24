@@ -1,3 +1,3 @@
 # Reciting-In-Team
 
-###组队背单词APP
+### 组队背单词APP
