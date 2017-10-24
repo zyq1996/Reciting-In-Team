@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/edit_text_dict_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/image_btn_dict_back_to_general"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="5"
+            android:background="@color/colorPrimaryDark"
+            android:src="?android:attr/actionModeCloseDrawable" />
+
+        <ImageButton
+            android:id="@+id/image_btn_dict_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/background_light"
+            android:src="@android:drawable/ic_menu_search" />
+
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/edit_text_dict"
+            android:layout_toRightOf="@id/image_btn_dict_back_to_general"
+            android:layout_toLeftOf="@id/image_btn_dict_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:hint="请在此输入单词"
+            android:textColor="#000000"
+            android:imeOptions="actionSearch"
+            />
+
+        <ImageButton
+            android:id="@+id/image_btn_dict_delete_all"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/image_btn_dict_search"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/ic_delete"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_dict_word"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="bottom"
+        android:textColor="#3B3C3D"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_below="@id/edit_text_dict_search_bar"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="3dp"/>
+
+    <ImageButton
+        android:id="@+id/image_btn_dict_add_to_wordlist"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/text_dict_word"
+        android:src="@drawable/img_add_word"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/phonetic_bar"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="22dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/text_dict_word">
+        <ImageButton
+            android:id="@+id/image_btn_dict_horn_accent_eng"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_width="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_word_play"
+            android:scaleType="fitCenter"
+            />
+        <TextView
+            android:id="@+id/text_dict_phosymbol_eng"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:gravity="center_vertical"
+            android:textColor="#6C6C6C"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/image_btn_dict_horn_accent_eng"/>
+        <TextView
+            android:id="@+id/text_dict_phosymbol_divider"
+            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:text="/"
+            android:gravity="center"
+            android:textColor="#6C6C6C"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/text_dict_phosymbol_eng"/>
+
+        <ImageButton
+            android:id="@+id/image_btn_dict_horn_accent_usa"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_width="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_word_play"
+            android:scaleType="fitCenter"
+            android:layout_toRightOf="@id/text_dict_phosymbol_divider"
+            />
+
+        <TextView
+            android:id="@+id/text_dict_phosymbol_usa"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:gravity="center_vertical"
+            android:textColor="#6C6C6C"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/image_btn_dict_horn_accent_usa"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dict_interpret_divider"
+        android:layout_height="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/phonetic_bar"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_right_cursor"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="基本释义"
+            android:textSize="14sp"
+            android:textColor="#00A2DC"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/text_dict_interpret"
+        android:layout_below="@id/dict_interpret_divider"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="12dp"
+        android:textSize="14sp"
+        android:textColor="#3C3C3C"
+        android:lineSpacingMultiplier="1.2"/>
+
+    <LinearLayout
+        android:id="@+id/dict_sentence_divider"
+        android:layout_height="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/text_dict_interpret"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_right_cursor"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="例句"
+                android:textSize="14sp"
+                android:textColor="#00A2DC"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="bottom"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="supported by iCIBA"
+                android:textColor="#6C6C6C"
+                android:textSize="10sp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listview_dict_sentence"
+        android:layout_below="@id/dict_sentence_divider"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:padding="12dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:divider="#8C8C8C"
+        android:dividerHeight="2px"
+        >
+
+    </ListView>
+
+</RelativeLayout>

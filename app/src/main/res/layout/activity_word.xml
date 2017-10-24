@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_display_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_display_interpret"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/tv_display_word"
+        android:layout_marginTop="80dp"
+        android:textSize="15sp"
+        />
+
+    <Button
+        android:id="@+id/bt_not_remember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="记不起来"
+        android:layout_marginBottom="42dp"
+        android:layout_alignBottom="@+id/bt_next_word"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/bt_next_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="下一个"
+        android:layout_marginBottom="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>
