@@ -9,10 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:focusable="true"
+        android:background="@android:color/black"
         android:focusableInTouchMode="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        >
 
         <ImageButton
             android:id="@+id/image_btn_dict_back_to_general"
@@ -23,7 +25,7 @@
             android:layout_marginLeft="1dp"
             android:layout_marginTop="1dp"
             android:layout_weight="5"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/black"
             android:src="?android:attr/actionModeCloseDrawable" />
 
         <ImageButton
@@ -31,7 +33,7 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:background="@android:color/background_light"
+            android:background="@android:color/black"
             android:src="@android:drawable/ic_menu_search" />
 
         <EditText
@@ -41,13 +43,13 @@
             android:layout_toLeftOf="@id/image_btn_dict_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/white"
             android:layout_weight="1"
             android:inputType="text"
             android:maxLines="1"
             android:gravity="center_vertical"
             android:hint="请在此输入单词"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:imeOptions="actionSearch"
             />
 

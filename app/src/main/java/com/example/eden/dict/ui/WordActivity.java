@@ -1,8 +1,11 @@
 package com.example.eden.dict.ui;
 
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +41,11 @@ public class WordActivity extends AppCompatActivity implements View.OnClickListe
         mReadwords = new ReadWordHelper(this);
         mWordBox = new WordBox(this, "glossary");
 
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("背单词");
+        }
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -69,5 +77,15 @@ public class WordActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             default:
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        // When the home button is pressed, take the user back to the VisualizerActivity
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

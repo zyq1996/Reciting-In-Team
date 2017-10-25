@@ -9,19 +9,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import com.example.eden.dict.R;
+import com.example.eden.dict.utils.BottomNavigationViewHelper;
 
 public class HomeActivity extends AppCompatActivity {
-
-    private EditText mSearchWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        mSearchWords = (EditText) findViewById(R.id.et_search);
+        getSupportActionBar().hide();
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
+
+        //关闭 BottomNav 三小一大的动画效果
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        HomeFragment homeFragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentContainer, homeFragment).commit();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -32,25 +36,20 @@ public class HomeActivity extends AppCompatActivity {
                                 HomeFragment homeFragment = new HomeFragment();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.contentContainer, homeFragment).commit();
                                 break;
+                            case R.id.action_team:
+                                break;
+                            case R.id.action_more:
+                                break;
                             case R.id.action_info:
                                 LoginFragment loginFragment = new LoginFragment();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.contentContainer, loginFragment).commit();
                                 break;
+                            default:
                         }
                         return true;
                     }
                 });
     }
 
-    public void startSearchActivity(View view) {
-        Intent startSearch = new Intent(this, SearchActivity.class);
-        String searchWord = mSearchWords.getText().toString();
-        startSearch.putExtra("words", searchWord);
-        startActivity(startSearch);
-    }
 
-    public void startWordActivity(View view) {
-        Intent startWordAcitivity = new Intent(this, WordActivity.class);
-        startActivity(startWordAcitivity);
-    }
 }

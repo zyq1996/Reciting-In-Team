@@ -1,4 +1,4 @@
-package com.example.eden.dict;
+package com.example.eden.dict.utils;
 
 /**
  * Created by Eden on 2017/4/16.
@@ -6,6 +6,8 @@ package com.example.eden.dict;
 
 import java.io.InputStream;
 
+import com.example.eden.dict.Dict;
+import com.example.eden.dict.WordValue;
 import com.example.eden.dict.utils.FileHelper;
 import com.example.eden.dict.utils.NetOperationHelper;
 
@@ -14,7 +16,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
 
-public class Mp3Player {
+public class Mp3Helper {
 
     public final static String MUSIC_ENG_RELATIVE_PATH = "dict/sounds/sounds_EN/";
     public final static String MUSIC_USA_RELATIVE_PATH = "dict/sounds/sounds_US/";
@@ -28,7 +30,7 @@ public class Mp3Player {
     Dict dict = null;
     public boolean isMusicPermitted = true;     //用于对是否播放音乐进行保护性设置，当该变量为false时，可以阻止一次音乐播放
 
-    public Mp3Player(Context context, String tableName) {
+    public Mp3Helper(Context context, String tableName) {
         this.context = context;
         this.tableName = tableName;
         fileU = new FileHelper();

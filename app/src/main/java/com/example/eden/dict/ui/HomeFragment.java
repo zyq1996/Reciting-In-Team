@@ -1,12 +1,16 @@
 package com.example.eden.dict.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.eden.dict.R;
 
@@ -29,6 +33,10 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private EditText mSearchWords;
+    private ImageButton mSearchButtom;
+    private ImageButton mReciteWord;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -59,6 +67,28 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mSearchWords = (EditText) getActivity().findViewById(R.id.et_search);
+        mSearchButtom = (ImageButton) getActivity().findViewById(R.id.img_btn_search);
+        mReciteWord = (ImageButton) getActivity().findViewById(R.id.img_btn_reciteword);
+
+        mSearchButtom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSearchActivity();
+            }
+        });
+        mReciteWord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startWordActivity();
+            }
+        });
     }
 
     @Override
@@ -67,6 +97,19 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
+    private void startSearchActivity() {
+        Intent startSearch = new Intent(getActivity(), SearchActivity.class);
+        String searchWord = mSearchWords.getText().toString();
+        startSearch.putExtra("words", searchWord);
+        startActivity(startSearch);
+    }
+
+    private void startWordActivity() {
+        Intent startWordAcitivity = new Intent(getActivity(), WordActivity.class);
+        startActivity(startWordAcitivity);
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -81,7 +124,7 @@ public class HomeFragment extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-
+            //attach to the home activity
         }
     }
 

@@ -30,10 +30,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="记不起来"
-        android:layout_marginBottom="42dp"
+        android:layout_alignBaseline="@+id/bt_next_word"
         android:layout_alignBottom="@+id/bt_next_word"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_toLeftOf="@+id/tv_display_word"
+        android:layout_toStartOf="@+id/tv_display_word"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp" />
 
     <Button
         android:id="@+id/bt_next_word"
@@ -41,9 +43,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="下一个"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="38dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_toRightOf="@+id/tv_display_word"
+        android:layout_toEndOf="@+id/tv_display_word" />
 
 </RelativeLayout>

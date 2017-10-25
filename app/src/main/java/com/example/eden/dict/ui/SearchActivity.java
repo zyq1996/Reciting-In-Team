@@ -28,7 +28,7 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.example.eden.dict.Dict;
 import com.example.eden.dict.DictSentenceListAdapter;
-import com.example.eden.dict.Mp3Player;
+import com.example.eden.dict.utils.Mp3Helper;
 import com.example.eden.dict.R;
 import com.example.eden.dict.WordValue;
 import com.example.eden.dict.utils.DatabaseHelper;
@@ -61,7 +61,7 @@ public class SearchActivity extends AppCompatActivity {
     public SQLiteDatabase dbGlossaryW = null;
 
 
-    public Mp3Player mp3Box = null;
+    public Mp3Helper mp3Box = null;
 
     public static String searchedWord = null;
 
@@ -85,7 +85,7 @@ public class SearchActivity extends AppCompatActivity {
         editTextDictSearch = (EditText) findViewById(R.id.edit_text_dict);
         editTextDictSearch.setOnEditorActionListener(new EditTextDictEditActionLis());
         dict = new Dict(SearchActivity.this, "dict");
-        mp3Box = new Mp3Player(SearchActivity.this, "dict");
+        mp3Box = new Mp3Helper(SearchActivity.this, "dict");
         dbGlossaryHelper = new DatabaseHelper(SearchActivity.this, "glossary");
         dbGlossaryR = dbGlossaryHelper.getReadableDatabase();
         dbGlossaryW = dbGlossaryHelper.getWritableDatabase();
@@ -139,8 +139,8 @@ public class SearchActivity extends AppCompatActivity {
         dictHandler.post(new RunnableDictSetTextInterface(searchedWord, phoSymEng, phoSymUSA, interpret, sentList, sentInChineseList));
         if (!phoSymEng.equals("") && !phoSymUSA.equals("")) {    //只有有音标时才去下载音乐
 
-            mp3Box.playMusicByWord(searchedWord, Mp3Player.ENGLISH_ACCENT, true, false);
-            mp3Box.playMusicByWord(searchedWord, Mp3Player.USA_ACCENT, true, false);
+            mp3Box.playMusicByWord(searchedWord, Mp3Helper.ENGLISH_ACCENT, true, false);
+            mp3Box.playMusicByWord(searchedWord, Mp3Helper.USA_ACCENT, true, false);
 
         }
     }
@@ -148,8 +148,8 @@ public class SearchActivity extends AppCompatActivity {
 
     public void setOnClickLis() {
         imageBtnDictBackToGeneral.setOnClickListener(new IBDictBackToGeneralClickLis());
-        imageBtnDictHornEng.setOnClickListener(new IBDictPlayMusicByAccentClickLis(Mp3Player.ENGLISH_ACCENT));
-        imageBtnDictHornUSA.setOnClickListener(new IBDictPlayMusicByAccentClickLis(Mp3Player.USA_ACCENT));
+        imageBtnDictHornEng.setOnClickListener(new IBDictPlayMusicByAccentClickLis(Mp3Helper.ENGLISH_ACCENT));
+        imageBtnDictHornUSA.setOnClickListener(new IBDictPlayMusicByAccentClickLis(Mp3Helper.USA_ACCENT));
         // imageBtnDictAddToWordList.setOnClickListener(new IBDictAddWordToGlossaryClickLis());
         imageBtnDictDelteEditText.setOnClickListener(new IBDictDeleteEditTextClickLis());
         imageBtnDictSerach.setOnClickListener(new IBDictSearchClickLis());
@@ -192,6 +192,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         //getIntentFromHomeActivity();
+        getSupportActionBar().hide();
         initViews();
         setOnClickLis();
 
