@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/registerLayout">
+
+
+    <ImageView
+        android:id="@+id/registerImageView"
+        android:layout_width="351dp"
+        android:layout_height="102dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/et_registerUserName"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint=" 用户名"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toBottomOf="@+id/registerImageView"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:cursorVisible="false"
+        android:maxLength="15"/>
+
+    <EditText
+        android:id="@+id/et_registerPassword"
+        android:layout_width="330dp"
+        android:layout_height="39dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:hint=" 密码（6-16个字符组成，区分大小写）"
+        android:background="@drawable/bg_edittext"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_registerUserName"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        android:cursorVisible="false"
+        android:maxLength="16" />
+
+    <EditText
+        android:id="@+id/et_registerPhoneNumber"
+        android:layout_width="330dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/bg_edittext"
+        android:ems="10"
+        android:hint=" 填写常用手机号"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_registerPassword"
+        android:cursorVisible="false"
+        android:maxLength="11"
+        android:inputType="phone"/>
+
+    <Button
+        android:id="@+id/registerButton_registerLayout"
+        android:layout_width="334dp"
+        android:layout_height="47dp"
+        android:text="注册"
+        android:layout_marginTop="29dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_registerPhoneNumber"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/usernameTips_registerLayout"
+        android:layout_width="331dp"
+        android:layout_height="19dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_registerUserName" />
+
+    <TextView
+        android:id="@+id/phonenumberTips_registerLayout"
+        android:layout_width="331dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_registerPhoneNumber" />
+
+    <TextView
+        android:id="@+id/passwordTips_registerLayout"
+        android:layout_width="331dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_registerPassword" />
+
+
+</android.support.constraint.ConstraintLayout>

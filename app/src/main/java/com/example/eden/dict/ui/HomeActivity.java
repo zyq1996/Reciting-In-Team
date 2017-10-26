@@ -7,9 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import com.example.eden.dict.R;
 import com.example.eden.dict.utils.BottomNavigationViewHelper;
+
+import java.lang.reflect.Field;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -18,6 +22,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
+
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        //getWindow().setStatusBarColor(R.color.colorPrimaryLight);
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
 
@@ -50,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
 
 }

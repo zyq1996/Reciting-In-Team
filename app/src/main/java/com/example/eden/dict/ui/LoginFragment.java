@@ -1,5 +1,6 @@
 package com.example.eden.dict.ui;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -100,8 +101,9 @@ public class LoginFragment extends Fragment {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.contentContainer, new RegisterFragment()).commit();
+                //FragmentManager fragmentManager = getFragmentManager();
+                //fragmentManager.beginTransaction().replace(R.id.contentContainer, new RegisterFragment()).commit();
+                startActivity(new Intent(getActivity(), RegisterActivity.class));
             }
         });
 

@@ -39,6 +39,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Eden\.android\build-cache\ed4ab3afc7d05a08e10d55e0664b89c6159bb9d3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6d0958dbac8e7be76690b8e85d91698dfadbd81e">
+        <dex dex="H:\AndroidStudioProjects\Development\dict\app\build\intermediates\pre-dexed\debug\classes_1de8b8cc4da055e64001dfffd29f9f55f6830fa7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="H:\AndroidStudioProjects\Development\dict\app\libs\okio-1.13.0.jar"
         jumboMode="false"
         optimize="true"
